@@ -1,3 +1,4 @@
+//Menu que devuelve una opcion en formato entero
 function menu(){
     let option = 0
     do{        
@@ -5,6 +6,7 @@ function menu(){
     }while(option == 0);
     return option;
 }
+//Se obtiene el valor del producto dependiendo de la opcion
 function selectorProducto(option){
     let valor=0;
     switch(option){
@@ -24,10 +26,11 @@ function selectorProducto(option){
     return valor;
 }
 
+//se calcula el valor de la cuota calculando el 10% del valor total
 function calculadorCuotas(valor){
     
     let cuota = parseInt(valor*0.10)    
     alert("El valor de su cuota mensual es de: "+cuota);
 }
-
+//Llamada a las funciones
 calculadorCuotas(selectorProducto(menu()))
