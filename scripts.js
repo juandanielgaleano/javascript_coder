@@ -3,6 +3,10 @@ function menu(){
     let option = 0
     do{        
         option = parseInt(prompt("Bienvenido a cotizador de seguro\n\r Seleccione una opcion\r 1- Auto\n 2- Moto\n 3- Notebook\n 4- Casa"))
+        if(option < 1 || option > 4){
+            option=0;
+            alert("Debe elegir una opcion correcta")            
+        }
     }while(option == 0);
     return option;
 }
@@ -11,16 +15,16 @@ function selectorProducto(option){
     let valor=0;
     switch(option){
         case 1:
-            valor = parseInt(prompt("Ingrese el valor aproximado de su auto"))
+            valor = parseFloat(prompt("Ingrese el valor aproximado de su auto"))
             break;
         case 2:
-            valor = parseInt(prompt("Ingrese el valor aproximado de su moto"))
+            valor = parseFloat(prompt("Ingrese el valor aproximado de su moto"))
             break;
         case 3:
-            valor = parseInt(prompt("Ingrese el valor aproximado de su notebook"))
+            valor = parseFloat(prompt("Ingrese el valor aproximado de su notebook"))
             break;
         case 4:
-            valor = parseInt(prompt("Ingrese el valor aproximado de su casa"))
+            valor = parseFloat(prompt("Ingrese el valor aproximado de su casa"))
             break;
     }
     return valor;
@@ -29,7 +33,7 @@ function selectorProducto(option){
 //se calcula el valor de la cuota calculando el 10% del valor total
 function calculadorCuotas(valor){
     
-    let cuota = parseInt(valor*0.10)    
+    let cuota = parseFloat(valor*0.10)    
     alert("El valor de su cuota mensual es de: "+cuota);
 }
 //Llamada a las funciones
