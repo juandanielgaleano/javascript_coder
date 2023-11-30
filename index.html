@@ -6,6 +6,39 @@
     <title>Simulador seguros</title>
 </head>
 <body>
+    <style>
+        #dataEntry, #displayData {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="menu">
+        <p>Bienvenido a cotizador de seguro</p>
+        <p>Seleccione una opción:</p>
+        <button onclick="seleccionOpcion(1)">Auto</button>
+        <button onclick="seleccionOpcion(2)">Moto</button>
+        <button onclick="seleccionOpcion(3)">Notebook</button>
+        <button onclick="seleccionOpcion(4)">Casa</button>
+    </div>
+
+    <div id="dataEntry">
+        <label for="inputValor">Ingrese el valor aproximado:</label>
+        <input type="number" id="inputValor">
+        <br>
+        <label for="inputText">Ingrese la información adicional:</label>
+        <input type="text" id="inputText">
+        <br>
+        <button onclick="obtenerDatosAdicionales()">Enviar</button>
+    </div>
+
+    <div id="message"></div>
+
+    <div id="displayData">
+        <button onclick="mostrarDatos()">Mostrar Datos</button>
+        <ul id="dataList"></ul>
+    </div>
+
     <script src="scripts.js"></script>
 </body>
 </html>
